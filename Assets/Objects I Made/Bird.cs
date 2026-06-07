@@ -6,11 +6,11 @@ using System.Collections.Generic;
 public class Bird : MonoBehaviour
 {
 
-    PlayerControls controls;
+    PlayerActions controls;
 
     void Awake()
     {
-        controls = new PlayerControls();
+        controls = new PlayerActions();
 
         controls.gameplay.Grow.performed += ctx => Grow();
     }
