@@ -5,15 +5,28 @@ using System.Collections.Generic;
 
 public class Bird : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    PlayerControls controls;
+
+    void Awake()
     {
-        
+        controls = new PlayerControls();
+
+        controls.gameplay.Grow.performed += ctx => Grow();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Grow()
     {
-        
+        transform.localScale *= 1.1f;
+    }
+
+    void OnEnable()
+    {
+        controls.gameplay.Enable();
+    }
+
+    void OnDisable()
+    {
+        controls.gameplay.Disable();
     }
 }
