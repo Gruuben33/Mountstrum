@@ -100,6 +100,24 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeScene1"",
+                    ""type"": ""Button"",
+                    ""id"": ""65a5d262-3727-4268-92a0-2bb2d5bac0ad"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeScene2"",
+                    ""type"": ""Button"",
+                    ""id"": ""7d51f4d9-0ee7-4fea-9d6a-836eb277d09e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -113,6 +131,28 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""Grow"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""667bab0b-2917-4e71-b7fd-6b246c8f4b55"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeScene1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""434f21fe-30c5-4c85-883b-056853c25b63"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeScene2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -122,6 +162,8 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         // gameplay
         m_gameplay = asset.FindActionMap("gameplay", throwIfNotFound: true);
         m_gameplay_Grow = m_gameplay.FindAction("Grow", throwIfNotFound: true);
+        m_gameplay_ChangeScene1 = m_gameplay.FindAction("ChangeScene1", throwIfNotFound: true);
+        m_gameplay_ChangeScene2 = m_gameplay.FindAction("ChangeScene2", throwIfNotFound: true);
     }
 
     ~@PlayerActions()
@@ -203,6 +245,8 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_gameplay;
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_gameplay_Grow;
+    private readonly InputAction m_gameplay_ChangeScene1;
+    private readonly InputAction m_gameplay_ChangeScene2;
     /// <summary>
     /// Provides access to input actions defined in input action map "gameplay".
     /// </summary>
@@ -218,6 +262,14 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "gameplay/Grow".
         /// </summary>
         public InputAction @Grow => m_Wrapper.m_gameplay_Grow;
+        /// <summary>
+        /// Provides access to the underlying input action "gameplay/ChangeScene1".
+        /// </summary>
+        public InputAction @ChangeScene1 => m_Wrapper.m_gameplay_ChangeScene1;
+        /// <summary>
+        /// Provides access to the underlying input action "gameplay/ChangeScene2".
+        /// </summary>
+        public InputAction @ChangeScene2 => m_Wrapper.m_gameplay_ChangeScene2;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -247,6 +299,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Grow.started += instance.OnGrow;
             @Grow.performed += instance.OnGrow;
             @Grow.canceled += instance.OnGrow;
+            @ChangeScene1.started += instance.OnChangeScene1;
+            @ChangeScene1.performed += instance.OnChangeScene1;
+            @ChangeScene1.canceled += instance.OnChangeScene1;
+            @ChangeScene2.started += instance.OnChangeScene2;
+            @ChangeScene2.performed += instance.OnChangeScene2;
+            @ChangeScene2.canceled += instance.OnChangeScene2;
         }
 
         /// <summary>
@@ -261,6 +319,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Grow.started -= instance.OnGrow;
             @Grow.performed -= instance.OnGrow;
             @Grow.canceled -= instance.OnGrow;
+            @ChangeScene1.started -= instance.OnChangeScene1;
+            @ChangeScene1.performed -= instance.OnChangeScene1;
+            @ChangeScene1.canceled -= instance.OnChangeScene1;
+            @ChangeScene2.started -= instance.OnChangeScene2;
+            @ChangeScene2.performed -= instance.OnChangeScene2;
+            @ChangeScene2.canceled -= instance.OnChangeScene2;
         }
 
         /// <summary>
@@ -308,5 +372,19 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnGrow(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ChangeScene1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChangeScene1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ChangeScene2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChangeScene2(InputAction.CallbackContext context);
     }
 }

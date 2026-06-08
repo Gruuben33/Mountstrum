@@ -20,6 +20,16 @@ public class Bird : MonoBehaviour
         transform.localScale *= 1.1f;
     }
 
+    void ChangeScene1()
+    {
+        GameManager.Instance.LoadSceneFromIndex(0);
+    }
+
+    void ChangeScene2()
+    {
+        GameManager.Instance.LoadSceneFromIndex(1);
+    }
+
     void OnEnable()
     {
         controls.gameplay.Enable();
