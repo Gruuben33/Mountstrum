@@ -118,6 +118,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NewGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""0b1ced48-76ad-48c2-bfaf-dc1bb8341ee8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -186,6 +195,28 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""ChangeScene2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""80e92f27-66d7-447d-871d-d0de2ca0d4d7"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NewGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b92b244d-a965-4189-acd7-21ea89d1661e"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NewGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -197,6 +228,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_gameplay_Grow = m_gameplay.FindAction("Grow", throwIfNotFound: true);
         m_gameplay_ChangeScene1 = m_gameplay.FindAction("ChangeScene1", throwIfNotFound: true);
         m_gameplay_ChangeScene2 = m_gameplay.FindAction("ChangeScene2", throwIfNotFound: true);
+        m_gameplay_NewGame = m_gameplay.FindAction("NewGame", throwIfNotFound: true);
     }
 
     ~@PlayerActions()
@@ -280,6 +312,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_gameplay_Grow;
     private readonly InputAction m_gameplay_ChangeScene1;
     private readonly InputAction m_gameplay_ChangeScene2;
+    private readonly InputAction m_gameplay_NewGame;
     /// <summary>
     /// Provides access to input actions defined in input action map "gameplay".
     /// </summary>
@@ -303,6 +336,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "gameplay/ChangeScene2".
         /// </summary>
         public InputAction @ChangeScene2 => m_Wrapper.m_gameplay_ChangeScene2;
+        /// <summary>
+        /// Provides access to the underlying input action "gameplay/NewGame".
+        /// </summary>
+        public InputAction @NewGame => m_Wrapper.m_gameplay_NewGame;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -338,6 +375,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @ChangeScene2.started += instance.OnChangeScene2;
             @ChangeScene2.performed += instance.OnChangeScene2;
             @ChangeScene2.canceled += instance.OnChangeScene2;
+            @NewGame.started += instance.OnNewGame;
+            @NewGame.performed += instance.OnNewGame;
+            @NewGame.canceled += instance.OnNewGame;
         }
 
         /// <summary>
@@ -358,6 +398,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @ChangeScene2.started -= instance.OnChangeScene2;
             @ChangeScene2.performed -= instance.OnChangeScene2;
             @ChangeScene2.canceled -= instance.OnChangeScene2;
+            @NewGame.started -= instance.OnNewGame;
+            @NewGame.performed -= instance.OnNewGame;
+            @NewGame.canceled -= instance.OnNewGame;
         }
 
         /// <summary>
@@ -419,5 +462,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnChangeScene2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "NewGame" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNewGame(InputAction.CallbackContext context);
     }
 }

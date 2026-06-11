@@ -12,26 +12,26 @@ public class GameLaunchCounter : MonoBehaviour, IDataPersistence
     void Awake()
     {
         LaunchCountText = this.GetComponent<TextMeshProUGUI>();
-        LaunchCount++;
     }
 
     public void LoadData(GameData data)
     {
-        this.LaunchCount = data.launchCount;
+        this.LaunchCount = data.LaunchCount;
     }
 
     public void SaveData(ref GameData data)
     {
-        data.launchCount = this.LaunchCount;
+        data.LaunchCount = this.LaunchCount;
     }
 
     void Start()
     {
+        this.LaunchCount++;
         UpdateText();
     }
 
     void UpdateText()
     {
-        LaunchCountText.text = "Launches: " + LaunchCount;
+        LaunchCountText.text = "Launches: " + this.LaunchCount;
     }
 }

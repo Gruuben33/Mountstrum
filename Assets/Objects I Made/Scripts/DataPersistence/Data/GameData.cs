@@ -5,10 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
-    public int launchCount;
+    public int LaunchCount;
 
     public GameData()
     {
-        launchCount = 0;
+        Debug.Log("workign");
+        LaunchCount = 0;
     }
 }
