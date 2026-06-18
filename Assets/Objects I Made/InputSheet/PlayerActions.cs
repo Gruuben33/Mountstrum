@@ -89,7 +89,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     ""name"": ""PlayerActions"",
     ""maps"": [
         {
-            ""name"": ""gameplay"",
+            ""name"": ""TestInputs"",
             ""id"": ""8f5150a6-5d3f-49ae-adcb-64090ceac4bf"",
             ""actions"": [
                 {
@@ -232,6 +232,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""487ff2bd-65f1-4191-885b-b5fab32d495b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -300,26 +309,49 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""56fd04d8-f687-4337-98a4-0d213a471cd5"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ebaddd8a-81a6-4e29-b6ef-e0267bc756c9"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
     ],
     ""controlSchemes"": []
 }");
-        // gameplay
-        m_gameplay = asset.FindActionMap("gameplay", throwIfNotFound: true);
-        m_gameplay_Grow = m_gameplay.FindAction("Grow", throwIfNotFound: true);
-        m_gameplay_ChangeScene1 = m_gameplay.FindAction("ChangeScene1", throwIfNotFound: true);
-        m_gameplay_ChangeScene2 = m_gameplay.FindAction("ChangeScene2", throwIfNotFound: true);
-        m_gameplay_NewGame = m_gameplay.FindAction("NewGame", throwIfNotFound: true);
+        // TestInputs
+        m_TestInputs = asset.FindActionMap("TestInputs", throwIfNotFound: true);
+        m_TestInputs_Grow = m_TestInputs.FindAction("Grow", throwIfNotFound: true);
+        m_TestInputs_ChangeScene1 = m_TestInputs.FindAction("ChangeScene1", throwIfNotFound: true);
+        m_TestInputs_ChangeScene2 = m_TestInputs.FindAction("ChangeScene2", throwIfNotFound: true);
+        m_TestInputs_NewGame = m_TestInputs.FindAction("NewGame", throwIfNotFound: true);
         // PlayerMovement
         m_PlayerMovement = asset.FindActionMap("PlayerMovement", throwIfNotFound: true);
         m_PlayerMovement_Move = m_PlayerMovement.FindAction("Move", throwIfNotFound: true);
+        m_PlayerMovement_Jump = m_PlayerMovement.FindAction("Jump", throwIfNotFound: true);
     }
 
     ~@PlayerActions()
     {
-        UnityEngine.Debug.Assert(!m_gameplay.enabled, "This will cause a leak and performance issues, PlayerActions.gameplay.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_TestInputs.enabled, "This will cause a leak and performance issues, PlayerActions.TestInputs.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_PlayerMovement.enabled, "This will cause a leak and performance issues, PlayerActions.PlayerMovement.Disable() has not been called.");
     }
 
@@ -393,44 +425,44 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // gameplay
-    private readonly InputActionMap m_gameplay;
-    private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
-    private readonly InputAction m_gameplay_Grow;
-    private readonly InputAction m_gameplay_ChangeScene1;
-    private readonly InputAction m_gameplay_ChangeScene2;
-    private readonly InputAction m_gameplay_NewGame;
+    // TestInputs
+    private readonly InputActionMap m_TestInputs;
+    private List<ITestInputsActions> m_TestInputsActionsCallbackInterfaces = new List<ITestInputsActions>();
+    private readonly InputAction m_TestInputs_Grow;
+    private readonly InputAction m_TestInputs_ChangeScene1;
+    private readonly InputAction m_TestInputs_ChangeScene2;
+    private readonly InputAction m_TestInputs_NewGame;
     /// <summary>
-    /// Provides access to input actions defined in input action map "gameplay".
+    /// Provides access to input actions defined in input action map "TestInputs".
     /// </summary>
-    public struct GameplayActions
+    public struct TestInputsActions
     {
         private @PlayerActions m_Wrapper;
 
         /// <summary>
         /// Construct a new instance of the input action map wrapper class.
         /// </summary>
-        public GameplayActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public TestInputsActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "gameplay/Grow".
+        /// Provides access to the underlying input action "TestInputs/Grow".
         /// </summary>
-        public InputAction @Grow => m_Wrapper.m_gameplay_Grow;
+        public InputAction @Grow => m_Wrapper.m_TestInputs_Grow;
         /// <summary>
-        /// Provides access to the underlying input action "gameplay/ChangeScene1".
+        /// Provides access to the underlying input action "TestInputs/ChangeScene1".
         /// </summary>
-        public InputAction @ChangeScene1 => m_Wrapper.m_gameplay_ChangeScene1;
+        public InputAction @ChangeScene1 => m_Wrapper.m_TestInputs_ChangeScene1;
         /// <summary>
-        /// Provides access to the underlying input action "gameplay/ChangeScene2".
+        /// Provides access to the underlying input action "TestInputs/ChangeScene2".
         /// </summary>
-        public InputAction @ChangeScene2 => m_Wrapper.m_gameplay_ChangeScene2;
+        public InputAction @ChangeScene2 => m_Wrapper.m_TestInputs_ChangeScene2;
         /// <summary>
-        /// Provides access to the underlying input action "gameplay/NewGame".
+        /// Provides access to the underlying input action "TestInputs/NewGame".
         /// </summary>
-        public InputAction @NewGame => m_Wrapper.m_gameplay_NewGame;
+        public InputAction @NewGame => m_Wrapper.m_TestInputs_NewGame;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
-        public InputActionMap Get() { return m_Wrapper.m_gameplay; }
+        public InputActionMap Get() { return m_Wrapper.m_TestInputs; }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
         public void Enable() { Get().Enable(); }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -438,9 +470,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
         public bool enabled => Get().enabled;
         /// <summary>
-        /// Implicitly converts an <see ref="GameplayActions" /> to an <see ref="InputActionMap" /> instance.
+        /// Implicitly converts an <see ref="TestInputsActions" /> to an <see ref="InputActionMap" /> instance.
         /// </summary>
-        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
+        public static implicit operator InputActionMap(TestInputsActions set) { return set.Get(); }
         /// <summary>
         /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
         /// </summary>
@@ -448,11 +480,11 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
         /// </remarks>
-        /// <seealso cref="GameplayActions" />
-        public void AddCallbacks(IGameplayActions instance)
+        /// <seealso cref="TestInputsActions" />
+        public void AddCallbacks(ITestInputsActions instance)
         {
-            if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_TestInputsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_TestInputsActionsCallbackInterfaces.Add(instance);
             @Grow.started += instance.OnGrow;
             @Grow.performed += instance.OnGrow;
             @Grow.canceled += instance.OnGrow;
@@ -473,8 +505,8 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
         /// </remarks>
-        /// <seealso cref="GameplayActions" />
-        private void UnregisterCallbacks(IGameplayActions instance)
+        /// <seealso cref="TestInputsActions" />
+        private void UnregisterCallbacks(ITestInputsActions instance)
         {
             @Grow.started -= instance.OnGrow;
             @Grow.performed -= instance.OnGrow;
@@ -491,12 +523,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         }
 
         /// <summary>
-        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="GameplayActions.UnregisterCallbacks(IGameplayActions)" />.
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="TestInputsActions.UnregisterCallbacks(ITestInputsActions)" />.
         /// </summary>
-        /// <seealso cref="GameplayActions.UnregisterCallbacks(IGameplayActions)" />
-        public void RemoveCallbacks(IGameplayActions instance)
+        /// <seealso cref="TestInputsActions.UnregisterCallbacks(ITestInputsActions)" />
+        public void RemoveCallbacks(ITestInputsActions instance)
         {
-            if (m_Wrapper.m_GameplayActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_TestInputsActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
@@ -506,26 +538,27 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
         /// </remarks>
-        /// <seealso cref="GameplayActions.AddCallbacks(IGameplayActions)" />
-        /// <seealso cref="GameplayActions.RemoveCallbacks(IGameplayActions)" />
-        /// <seealso cref="GameplayActions.UnregisterCallbacks(IGameplayActions)" />
-        public void SetCallbacks(IGameplayActions instance)
+        /// <seealso cref="TestInputsActions.AddCallbacks(ITestInputsActions)" />
+        /// <seealso cref="TestInputsActions.RemoveCallbacks(ITestInputsActions)" />
+        /// <seealso cref="TestInputsActions.UnregisterCallbacks(ITestInputsActions)" />
+        public void SetCallbacks(ITestInputsActions instance)
         {
-            foreach (var item in m_Wrapper.m_GameplayActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_TestInputsActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_GameplayActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_TestInputsActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
     /// <summary>
-    /// Provides a new <see cref="GameplayActions" /> instance referencing this action map.
+    /// Provides a new <see cref="TestInputsActions" /> instance referencing this action map.
     /// </summary>
-    public GameplayActions @gameplay => new GameplayActions(this);
+    public TestInputsActions @TestInputs => new TestInputsActions(this);
 
     // PlayerMovement
     private readonly InputActionMap m_PlayerMovement;
     private List<IPlayerMovementActions> m_PlayerMovementActionsCallbackInterfaces = new List<IPlayerMovementActions>();
     private readonly InputAction m_PlayerMovement_Move;
+    private readonly InputAction m_PlayerMovement_Jump;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerMovement".
     /// </summary>
@@ -541,6 +574,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PlayerMovement/Move".
         /// </summary>
         public InputAction @Move => m_Wrapper.m_PlayerMovement_Move;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerMovement/Jump".
+        /// </summary>
+        public InputAction @Jump => m_Wrapper.m_PlayerMovement_Jump;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -570,6 +607,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
         }
 
         /// <summary>
@@ -584,6 +624,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
         }
 
         /// <summary>
@@ -618,11 +661,11 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     /// </summary>
     public PlayerMovementActions @PlayerMovement => new PlayerMovementActions(this);
     /// <summary>
-    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "gameplay" which allows adding and removing callbacks.
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "TestInputs" which allows adding and removing callbacks.
     /// </summary>
-    /// <seealso cref="GameplayActions.AddCallbacks(IGameplayActions)" />
-    /// <seealso cref="GameplayActions.RemoveCallbacks(IGameplayActions)" />
-    public interface IGameplayActions
+    /// <seealso cref="TestInputsActions.AddCallbacks(ITestInputsActions)" />
+    /// <seealso cref="TestInputsActions.RemoveCallbacks(ITestInputsActions)" />
+    public interface ITestInputsActions
     {
         /// <summary>
         /// Method invoked when associated input action "Grow" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
@@ -667,5 +710,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMove(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Jump" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnJump(InputAction.CallbackContext context);
     }
 }

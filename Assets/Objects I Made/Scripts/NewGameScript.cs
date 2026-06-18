@@ -9,7 +9,7 @@ public class NewGameScript : MonoBehaviour
     {
         controls = new PlayerActions();
 
-        controls.gameplay.NewGame.performed += ctx => NewGame();
+        controls.TestInputs.NewGame.performed += ctx => NewGame();
     }
 
     void NewGame()
@@ -20,11 +20,12 @@ public class NewGameScript : MonoBehaviour
 
     void OnEnable()
     {
-        controls.gameplay.Enable();
+        if (controls == null) controls = new PlayerActions();
+        controls.TestInputs.Enable();
     }
 
     void OnDisable()
     {
-        controls.gameplay.Disable();
+        if (controls != null) controls.TestInputs.Disable();
     }
 }
