@@ -616,7 +616,7 @@ Transform:
   m_GameObject: {fileID: 591248030}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.68, y: -2.45, z: 0}
+  m_LocalPosition: {x: 1.31, y: -2.87, z: 0}
   m_LocalScale: {x: 3.3335, y: 3.3335, z: 3.3335}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1121,9 +1121,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2.5
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_Mass: 0.35
+  m_LinearDamping: 0.7
+  m_AngularDamping: 0
   m_GravityScale: 0.85
   m_Material: {fileID: 6200000, guid: ef93744ca8a3a634e813f5051c147246, type: 2}
   m_IncludeLayers:
@@ -1271,8 +1271,8 @@ Transform:
   m_GameObject: {fileID: 2096109893}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.76, y: -3.08, z: 0}
-  m_LocalScale: {x: 1.9550567, y: 1.9550567, z: 1.9550567}
+  m_LocalPosition: {x: 0.6, y: -2.9, z: 0}
+  m_LocalScale: {x: 8.926987, y: 2.3725965, z: 7.498519}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1293,7 +1293,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ef93744ca8a3a634e813f5051c147246, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
