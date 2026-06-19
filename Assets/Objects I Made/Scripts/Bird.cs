@@ -8,15 +8,15 @@ using System.Collections.Generic;
 public class Bird : MonoBehaviour
 {
     private int MaxMovementSpeed = 20;
-    private float Acceleration = 20f;
-    private float JumpForce = 3f;
+    private float Acceleration = 80f;
+    private float JumpForce = 10f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
     PlayerActions controls;
     Collider2D col;
 
     [SerializeField]
-    LayerMask groundLayer = ~0;
+    LayerMask groundLayer;
     [SerializeField]
     float groundCheckDistance = 0.05f;
     [SerializeField]
@@ -26,6 +26,7 @@ public class Bird : MonoBehaviour
 
     void Awake()
     {
+        groundLayer = LayerMask.GetMask("Ground");
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         if (col == null) Debug.LogWarning("Bird: no Collider2D found — grounded checks will fail.");
