@@ -9,7 +9,7 @@ public class Bird : MonoBehaviour
 {
     private int MaxMovementSpeed = 20;
     private float Acceleration = 80f;
-    private float JumpForce = 10f;
+    private float JumpForce = 14f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
     PlayerActions controls;
@@ -71,7 +71,11 @@ public class Bird : MonoBehaviour
         float HorizontalInput = input.x;
         if (rb != null)
         {
-            if (Mathf.Abs(rb.linearVelocity.x) < MaxMovementSpeed)
+            if (rb.linearVelocity.x < MaxMovementSpeed && HorizontalInput > 0)
+            {
+                rb.AddForce(new Vector2(HorizontalInput * Acceleration, 0));
+            }
+            else if (rb.linearVelocity.x > -MaxMovementSpeed && HorizontalInput < 0)
             {
                 rb.AddForce(new Vector2(HorizontalInput * Acceleration, 0));
             }
