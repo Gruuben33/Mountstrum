@@ -93,33 +93,6 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             ""id"": ""8f5150a6-5d3f-49ae-adcb-64090ceac4bf"",
             ""actions"": [
                 {
-                    ""name"": ""Grow"",
-                    ""type"": ""Button"",
-                    ""id"": ""5e4370ef-ce8b-4e74-9719-c1084c7dca01"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""ChangeScene1"",
-                    ""type"": ""Button"",
-                    ""id"": ""65a5d262-3727-4268-92a0-2bb2d5bac0ad"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""ChangeScene2"",
-                    ""type"": ""Button"",
-                    ""id"": ""7d51f4d9-0ee7-4fea-9d6a-836eb277d09e"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""NewGame"",
                     ""type"": ""Button"",
                     ""id"": ""0b1ced48-76ad-48c2-bfaf-dc1bb8341ee8"",
@@ -127,75 +100,18 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BackToMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""1b979e39-0fc7-45d0-aa2f-18f4cffbd8cb"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""be732db4-5a85-4f4a-8491-30babfce7baa"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Grow"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0b3ced11-2453-4b50-816b-5be8a36a3f7d"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Grow"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""667bab0b-2917-4e71-b7fd-6b246c8f4b55"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeScene1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f71e2684-281b-464f-b55a-6568f0e797d1"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeScene1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""434f21fe-30c5-4c85-883b-056853c25b63"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeScene2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6f463101-84dc-44b3-b9c8-bd461e59c3ff"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeScene2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": """",
                     ""id"": ""80e92f27-66d7-447d-871d-d0de2ca0d4d7"",
@@ -215,6 +131,28 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""NewGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""42ec760c-22de-4223-98b3-d0587f291862"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BackToMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""487a6a71-0793-4747-ab74-7fdf7fb4be8d"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BackToMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -237,6 +175,24 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""487ff2bd-65f1-4191-885b-b5fab32d495b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ThrowHook"",
+                    ""type"": ""Button"",
+                    ""id"": ""dc9f85aa-c92d-427e-8cb9-926fcb8876dd"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenInventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""3f42d672-d0c4-4929-9fa5-07c30f15d4e2"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -331,6 +287,50 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c1c0c078-394e-4422-8472-3d033db3a875"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ThrowHook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""14dc14b2-ac01-4660-b25b-f6fa48bc3bce"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ThrowHook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9c7ad4e2-4a67-4a6f-9c40-1ef26627e2c2"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""16aa3d61-f5b4-4cf9-af12-0f2f32e660fd"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -339,14 +339,14 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
 }");
         // TestInputs
         m_TestInputs = asset.FindActionMap("TestInputs", throwIfNotFound: true);
-        m_TestInputs_Grow = m_TestInputs.FindAction("Grow", throwIfNotFound: true);
-        m_TestInputs_ChangeScene1 = m_TestInputs.FindAction("ChangeScene1", throwIfNotFound: true);
-        m_TestInputs_ChangeScene2 = m_TestInputs.FindAction("ChangeScene2", throwIfNotFound: true);
         m_TestInputs_NewGame = m_TestInputs.FindAction("NewGame", throwIfNotFound: true);
+        m_TestInputs_BackToMenu = m_TestInputs.FindAction("BackToMenu", throwIfNotFound: true);
         // PlayerMovement
         m_PlayerMovement = asset.FindActionMap("PlayerMovement", throwIfNotFound: true);
         m_PlayerMovement_Move = m_PlayerMovement.FindAction("Move", throwIfNotFound: true);
         m_PlayerMovement_Jump = m_PlayerMovement.FindAction("Jump", throwIfNotFound: true);
+        m_PlayerMovement_ThrowHook = m_PlayerMovement.FindAction("ThrowHook", throwIfNotFound: true);
+        m_PlayerMovement_OpenInventory = m_PlayerMovement.FindAction("OpenInventory", throwIfNotFound: true);
     }
 
     ~@PlayerActions()
@@ -428,10 +428,8 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     // TestInputs
     private readonly InputActionMap m_TestInputs;
     private List<ITestInputsActions> m_TestInputsActionsCallbackInterfaces = new List<ITestInputsActions>();
-    private readonly InputAction m_TestInputs_Grow;
-    private readonly InputAction m_TestInputs_ChangeScene1;
-    private readonly InputAction m_TestInputs_ChangeScene2;
     private readonly InputAction m_TestInputs_NewGame;
+    private readonly InputAction m_TestInputs_BackToMenu;
     /// <summary>
     /// Provides access to input actions defined in input action map "TestInputs".
     /// </summary>
@@ -444,21 +442,13 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// </summary>
         public TestInputsActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "TestInputs/Grow".
-        /// </summary>
-        public InputAction @Grow => m_Wrapper.m_TestInputs_Grow;
-        /// <summary>
-        /// Provides access to the underlying input action "TestInputs/ChangeScene1".
-        /// </summary>
-        public InputAction @ChangeScene1 => m_Wrapper.m_TestInputs_ChangeScene1;
-        /// <summary>
-        /// Provides access to the underlying input action "TestInputs/ChangeScene2".
-        /// </summary>
-        public InputAction @ChangeScene2 => m_Wrapper.m_TestInputs_ChangeScene2;
-        /// <summary>
         /// Provides access to the underlying input action "TestInputs/NewGame".
         /// </summary>
         public InputAction @NewGame => m_Wrapper.m_TestInputs_NewGame;
+        /// <summary>
+        /// Provides access to the underlying input action "TestInputs/BackToMenu".
+        /// </summary>
+        public InputAction @BackToMenu => m_Wrapper.m_TestInputs_BackToMenu;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -485,18 +475,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_TestInputsActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_TestInputsActionsCallbackInterfaces.Add(instance);
-            @Grow.started += instance.OnGrow;
-            @Grow.performed += instance.OnGrow;
-            @Grow.canceled += instance.OnGrow;
-            @ChangeScene1.started += instance.OnChangeScene1;
-            @ChangeScene1.performed += instance.OnChangeScene1;
-            @ChangeScene1.canceled += instance.OnChangeScene1;
-            @ChangeScene2.started += instance.OnChangeScene2;
-            @ChangeScene2.performed += instance.OnChangeScene2;
-            @ChangeScene2.canceled += instance.OnChangeScene2;
             @NewGame.started += instance.OnNewGame;
             @NewGame.performed += instance.OnNewGame;
             @NewGame.canceled += instance.OnNewGame;
+            @BackToMenu.started += instance.OnBackToMenu;
+            @BackToMenu.performed += instance.OnBackToMenu;
+            @BackToMenu.canceled += instance.OnBackToMenu;
         }
 
         /// <summary>
@@ -508,18 +492,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="TestInputsActions" />
         private void UnregisterCallbacks(ITestInputsActions instance)
         {
-            @Grow.started -= instance.OnGrow;
-            @Grow.performed -= instance.OnGrow;
-            @Grow.canceled -= instance.OnGrow;
-            @ChangeScene1.started -= instance.OnChangeScene1;
-            @ChangeScene1.performed -= instance.OnChangeScene1;
-            @ChangeScene1.canceled -= instance.OnChangeScene1;
-            @ChangeScene2.started -= instance.OnChangeScene2;
-            @ChangeScene2.performed -= instance.OnChangeScene2;
-            @ChangeScene2.canceled -= instance.OnChangeScene2;
             @NewGame.started -= instance.OnNewGame;
             @NewGame.performed -= instance.OnNewGame;
             @NewGame.canceled -= instance.OnNewGame;
+            @BackToMenu.started -= instance.OnBackToMenu;
+            @BackToMenu.performed -= instance.OnBackToMenu;
+            @BackToMenu.canceled -= instance.OnBackToMenu;
         }
 
         /// <summary>
@@ -559,6 +537,8 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private List<IPlayerMovementActions> m_PlayerMovementActionsCallbackInterfaces = new List<IPlayerMovementActions>();
     private readonly InputAction m_PlayerMovement_Move;
     private readonly InputAction m_PlayerMovement_Jump;
+    private readonly InputAction m_PlayerMovement_ThrowHook;
+    private readonly InputAction m_PlayerMovement_OpenInventory;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerMovement".
     /// </summary>
@@ -578,6 +558,14 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PlayerMovement/Jump".
         /// </summary>
         public InputAction @Jump => m_Wrapper.m_PlayerMovement_Jump;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerMovement/ThrowHook".
+        /// </summary>
+        public InputAction @ThrowHook => m_Wrapper.m_PlayerMovement_ThrowHook;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerMovement/OpenInventory".
+        /// </summary>
+        public InputAction @OpenInventory => m_Wrapper.m_PlayerMovement_OpenInventory;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -610,6 +598,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @ThrowHook.started += instance.OnThrowHook;
+            @ThrowHook.performed += instance.OnThrowHook;
+            @ThrowHook.canceled += instance.OnThrowHook;
+            @OpenInventory.started += instance.OnOpenInventory;
+            @OpenInventory.performed += instance.OnOpenInventory;
+            @OpenInventory.canceled += instance.OnOpenInventory;
         }
 
         /// <summary>
@@ -627,6 +621,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @ThrowHook.started -= instance.OnThrowHook;
+            @ThrowHook.performed -= instance.OnThrowHook;
+            @ThrowHook.canceled -= instance.OnThrowHook;
+            @OpenInventory.started -= instance.OnOpenInventory;
+            @OpenInventory.performed -= instance.OnOpenInventory;
+            @OpenInventory.canceled -= instance.OnOpenInventory;
         }
 
         /// <summary>
@@ -668,33 +668,19 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     public interface ITestInputsActions
     {
         /// <summary>
-        /// Method invoked when associated input action "Grow" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnGrow(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "ChangeScene1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnChangeScene1(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "ChangeScene2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnChangeScene2(InputAction.CallbackContext context);
-        /// <summary>
         /// Method invoked when associated input action "NewGame" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnNewGame(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "BackToMenu" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnBackToMenu(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "PlayerMovement" which allows adding and removing callbacks.
@@ -717,5 +703,19 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnJump(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ThrowHook" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnThrowHook(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "OpenInventory" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnOpenInventory(InputAction.CallbackContext context);
     }
 }

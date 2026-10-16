@@ -378,6 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc2127b0798adf479e7786c5a9b9871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  PlayerStats: {fileID: 11400000, guid: a915c743e9a1dcd43b0e9f40418e6685, type: 2}
 --- !u!1 &597203379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,8 +1283,8 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 137836564}
+  - {fileID: 492671169}
   - {fileID: 1136709726}
   - {fileID: 36757684}
   - {fileID: 100376232}
-  - {fileID: 492671169}
+  - {fileID: 137836564}

@@ -7,12 +7,16 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Bird : MonoBehaviour
 {
+    [SerializeField] public PlayerStats PlayerStats;
+    [SerializeField] public GameManager GameManager;
     private int MaxMovementSpeed = 20;
     private float Acceleration = 80f;
     private float JumpForce = 14f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
-    PlayerActions controls;
+    public PlayerActions controls;
+    public bool canMove = true;
+    public Dictionary<string, int> abilityInventory = new Dictionary<string, int>();
     Collider2D col;
 
     [SerializeField]
@@ -26,15 +30,14 @@ public class Bird : MonoBehaviour
 
     void Awake()
     {
+        abilityInventory["Hook"] = PlayerStats.HookCount;
         groundLayer = LayerMask.GetMask("Ground");
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         if (col == null) Debug.LogWarning("Bird: no Collider2D found — grounded checks will fail.");
         if (controls == null) controls = new PlayerActions();
 
-        //controls.TestInputs.Grow.performed += ctx => Grow();
-        controls.TestInputs.ChangeScene1.performed += ctx => ChangeScene1();
-        controls.TestInputs.ChangeScene2.performed += ctx => ChangeScene2();
+        controls.TestInputs.BackToMenu.performed += ctx => BackToMenu();
 
         controls.PlayerMovement.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         controls.PlayerMovement.Move.canceled += ctx => moveInput = Vector2.zero;
@@ -43,7 +46,7 @@ public class Bird : MonoBehaviour
 
     void FixedUpdate()
     {
-        Move(moveInput);
+        if (canMove) Move(moveInput);
     }
 
     void Jump()
@@ -112,24 +115,11 @@ public class Bird : MonoBehaviour
         Gizmos.DrawWireCube(origin, size);
     }
 
-    void Grow()
+    void BackToMenu()
     {
-        Debug.Log("Growing!");
-        transform.localScale *= 1.1f;
+        Debug.Log("Returning to Menu");
+        GameManager.Instance.LoadSceneFromIndex(0);
     }
-
-    void ChangeScene1()
-    {
-        Debug.Log("Changing to SampleScene");
-        GameManager.Instance.LoadSceneFromIndex(1);
-    }
-
-    void ChangeScene2()
-    {
-        Debug.Log("Changing to SecondScene");
-        GameManager.Instance.LoadSceneFromIndex(2);
-    }
-
 
     void OnEnable()
     {
