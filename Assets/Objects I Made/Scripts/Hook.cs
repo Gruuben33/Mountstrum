@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Hook", menuName = "Tools/Hook")]
-public class Hook : ScriptableObject
+public class Hook : Tool
 {
     public override string Name => "Hook";
     public override int ID => 0;
