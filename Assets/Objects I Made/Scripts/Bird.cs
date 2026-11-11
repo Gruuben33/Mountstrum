@@ -7,6 +7,9 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Bird : MonoBehaviour
 {
+    [SerializeField] private Tool Ability4Tool;
+    private bool Ability4IsActive;
+    private float Ability4StartTime;
     [SerializeField] public PlayerStats PlayerStats;
     [SerializeField] public GameManager GameManager;
     private int MaxMovementSpeed = 20;
@@ -42,6 +45,8 @@ public class Bird : MonoBehaviour
         controls.PlayerMovement.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         controls.PlayerMovement.Move.canceled += ctx => moveInput = Vector2.zero;
         controls.PlayerMovement.Jump.performed += ctx => Jump();
+        controls.PlayerMovement.Ability4.performed += ctx => OnAbility4Start();
+        controls.PlayerMovement.Ability4.canceled += ctx => OnAbility4End();
     }
 
     void FixedUpdate()
@@ -119,6 +124,27 @@ public class Bird : MonoBehaviour
     {
         Debug.Log("Returning to Menu");
         GameManager.Instance.LoadSceneFromIndex(0);
+    }
+
+    void OnAbility4Start()
+    {
+        if (Ability4Tool == null)
+        {
+            Debug.LogError("No tool assigned to Ability 4.", this);
+            return;
+        }
+        Ability4IsActive = true;
+        Ability4StartTime = Time.time;
+        Ability4Tool.OnUseStart(this);
+    }
+
+    void OnAbility4End()
+    {
+        if (!Ability4IsActive || Ability4Tool == null) return;
+
+        float ElapsedTime = Time.time - Ability4StartTime;
+        Ability4Tool.OnUseEnd(this, moveInput, ElapsedTime);
+        Ability4IsActive = false;
     }
 
     void OnEnable()

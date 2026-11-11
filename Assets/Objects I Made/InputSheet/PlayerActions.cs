@@ -190,7 +190,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""NorthButton"",
+                    ""name"": ""Ability1"",
                     ""type"": ""Button"",
                     ""id"": ""285f6f19-081b-4e1a-8a66-15d249e1c00a"",
                     ""expectedControlType"": """",
@@ -199,7 +199,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""EastButton"",
+                    ""name"": ""Ability2"",
                     ""type"": ""Button"",
                     ""id"": ""c5ab4279-8f8d-4a49-af0a-b9eefeebfd94"",
                     ""expectedControlType"": """",
@@ -208,7 +208,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SouthButton"",
+                    ""name"": ""Ability3"",
                     ""type"": ""Button"",
                     ""id"": ""62c7146a-75cf-4b48-bf5f-f294137b8a50"",
                     ""expectedControlType"": """",
@@ -217,7 +217,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""WestButton"",
+                    ""name"": ""Ability4"",
                     ""type"": ""Button"",
                     ""id"": ""5d2c0b85-c7b6-4382-a255-7154547aa841"",
                     ""expectedControlType"": """",
@@ -344,7 +344,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""EastButton"",
+                    ""action"": ""Ability2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -355,7 +355,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""NorthButton"",
+                    ""action"": ""Ability1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -366,7 +366,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SouthButton"",
+                    ""action"": ""Ability3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -377,7 +377,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""WestButton"",
+                    ""action"": ""Ability4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -395,10 +395,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_PlayerMovement_Move = m_PlayerMovement.FindAction("Move", throwIfNotFound: true);
         m_PlayerMovement_Jump = m_PlayerMovement.FindAction("Jump", throwIfNotFound: true);
         m_PlayerMovement_OpenInventory = m_PlayerMovement.FindAction("OpenInventory", throwIfNotFound: true);
-        m_PlayerMovement_NorthButton = m_PlayerMovement.FindAction("NorthButton", throwIfNotFound: true);
-        m_PlayerMovement_EastButton = m_PlayerMovement.FindAction("EastButton", throwIfNotFound: true);
-        m_PlayerMovement_SouthButton = m_PlayerMovement.FindAction("SouthButton", throwIfNotFound: true);
-        m_PlayerMovement_WestButton = m_PlayerMovement.FindAction("WestButton", throwIfNotFound: true);
+        m_PlayerMovement_Ability1 = m_PlayerMovement.FindAction("Ability1", throwIfNotFound: true);
+        m_PlayerMovement_Ability2 = m_PlayerMovement.FindAction("Ability2", throwIfNotFound: true);
+        m_PlayerMovement_Ability3 = m_PlayerMovement.FindAction("Ability3", throwIfNotFound: true);
+        m_PlayerMovement_Ability4 = m_PlayerMovement.FindAction("Ability4", throwIfNotFound: true);
     }
 
     ~@PlayerActions()
@@ -590,10 +590,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMovement_Move;
     private readonly InputAction m_PlayerMovement_Jump;
     private readonly InputAction m_PlayerMovement_OpenInventory;
-    private readonly InputAction m_PlayerMovement_NorthButton;
-    private readonly InputAction m_PlayerMovement_EastButton;
-    private readonly InputAction m_PlayerMovement_SouthButton;
-    private readonly InputAction m_PlayerMovement_WestButton;
+    private readonly InputAction m_PlayerMovement_Ability1;
+    private readonly InputAction m_PlayerMovement_Ability2;
+    private readonly InputAction m_PlayerMovement_Ability3;
+    private readonly InputAction m_PlayerMovement_Ability4;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerMovement".
     /// </summary>
@@ -618,21 +618,21 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @OpenInventory => m_Wrapper.m_PlayerMovement_OpenInventory;
         /// <summary>
-        /// Provides access to the underlying input action "PlayerMovement/NorthButton".
+        /// Provides access to the underlying input action "PlayerMovement/Ability1".
         /// </summary>
-        public InputAction @NorthButton => m_Wrapper.m_PlayerMovement_NorthButton;
+        public InputAction @Ability1 => m_Wrapper.m_PlayerMovement_Ability1;
         /// <summary>
-        /// Provides access to the underlying input action "PlayerMovement/EastButton".
+        /// Provides access to the underlying input action "PlayerMovement/Ability2".
         /// </summary>
-        public InputAction @EastButton => m_Wrapper.m_PlayerMovement_EastButton;
+        public InputAction @Ability2 => m_Wrapper.m_PlayerMovement_Ability2;
         /// <summary>
-        /// Provides access to the underlying input action "PlayerMovement/SouthButton".
+        /// Provides access to the underlying input action "PlayerMovement/Ability3".
         /// </summary>
-        public InputAction @SouthButton => m_Wrapper.m_PlayerMovement_SouthButton;
+        public InputAction @Ability3 => m_Wrapper.m_PlayerMovement_Ability3;
         /// <summary>
-        /// Provides access to the underlying input action "PlayerMovement/WestButton".
+        /// Provides access to the underlying input action "PlayerMovement/Ability4".
         /// </summary>
-        public InputAction @WestButton => m_Wrapper.m_PlayerMovement_WestButton;
+        public InputAction @Ability4 => m_Wrapper.m_PlayerMovement_Ability4;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -668,18 +668,18 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @OpenInventory.started += instance.OnOpenInventory;
             @OpenInventory.performed += instance.OnOpenInventory;
             @OpenInventory.canceled += instance.OnOpenInventory;
-            @NorthButton.started += instance.OnNorthButton;
-            @NorthButton.performed += instance.OnNorthButton;
-            @NorthButton.canceled += instance.OnNorthButton;
-            @EastButton.started += instance.OnEastButton;
-            @EastButton.performed += instance.OnEastButton;
-            @EastButton.canceled += instance.OnEastButton;
-            @SouthButton.started += instance.OnSouthButton;
-            @SouthButton.performed += instance.OnSouthButton;
-            @SouthButton.canceled += instance.OnSouthButton;
-            @WestButton.started += instance.OnWestButton;
-            @WestButton.performed += instance.OnWestButton;
-            @WestButton.canceled += instance.OnWestButton;
+            @Ability1.started += instance.OnAbility1;
+            @Ability1.performed += instance.OnAbility1;
+            @Ability1.canceled += instance.OnAbility1;
+            @Ability2.started += instance.OnAbility2;
+            @Ability2.performed += instance.OnAbility2;
+            @Ability2.canceled += instance.OnAbility2;
+            @Ability3.started += instance.OnAbility3;
+            @Ability3.performed += instance.OnAbility3;
+            @Ability3.canceled += instance.OnAbility3;
+            @Ability4.started += instance.OnAbility4;
+            @Ability4.performed += instance.OnAbility4;
+            @Ability4.canceled += instance.OnAbility4;
         }
 
         /// <summary>
@@ -700,18 +700,18 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @OpenInventory.started -= instance.OnOpenInventory;
             @OpenInventory.performed -= instance.OnOpenInventory;
             @OpenInventory.canceled -= instance.OnOpenInventory;
-            @NorthButton.started -= instance.OnNorthButton;
-            @NorthButton.performed -= instance.OnNorthButton;
-            @NorthButton.canceled -= instance.OnNorthButton;
-            @EastButton.started -= instance.OnEastButton;
-            @EastButton.performed -= instance.OnEastButton;
-            @EastButton.canceled -= instance.OnEastButton;
-            @SouthButton.started -= instance.OnSouthButton;
-            @SouthButton.performed -= instance.OnSouthButton;
-            @SouthButton.canceled -= instance.OnSouthButton;
-            @WestButton.started -= instance.OnWestButton;
-            @WestButton.performed -= instance.OnWestButton;
-            @WestButton.canceled -= instance.OnWestButton;
+            @Ability1.started -= instance.OnAbility1;
+            @Ability1.performed -= instance.OnAbility1;
+            @Ability1.canceled -= instance.OnAbility1;
+            @Ability2.started -= instance.OnAbility2;
+            @Ability2.performed -= instance.OnAbility2;
+            @Ability2.canceled -= instance.OnAbility2;
+            @Ability3.started -= instance.OnAbility3;
+            @Ability3.performed -= instance.OnAbility3;
+            @Ability3.canceled -= instance.OnAbility3;
+            @Ability4.started -= instance.OnAbility4;
+            @Ability4.performed -= instance.OnAbility4;
+            @Ability4.canceled -= instance.OnAbility4;
         }
 
         /// <summary>
@@ -796,32 +796,32 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnOpenInventory(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "NorthButton" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Ability1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnNorthButton(InputAction.CallbackContext context);
+        void OnAbility1(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "EastButton" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Ability2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnEastButton(InputAction.CallbackContext context);
+        void OnAbility2(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "SouthButton" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Ability3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnSouthButton(InputAction.CallbackContext context);
+        void OnAbility3(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "WestButton" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Ability4" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnWestButton(InputAction.CallbackContext context);
+        void OnAbility4(InputAction.CallbackContext context);
     }
 }

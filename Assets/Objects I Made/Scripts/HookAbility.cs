@@ -18,8 +18,8 @@ public class HookAbility : MonoBehaviour
 
     private void Start()
     {
-        player.controls.PlayerMovement.WestButton.performed += ctx => StartThrowHook();
-        player.controls.PlayerMovement.WestButton.canceled += ctx => StopThrowHook();
+        player.controls.PlayerMovement.Ability4.performed += ctx => StartThrowHook();
+        player.controls.PlayerMovement.Ability4.canceled += ctx => StopThrowHook();
         player.controls.PlayerMovement.Move.performed += ctx => throwDirection = ctx.ReadValue<Vector2>();
     }
 
@@ -27,8 +27,8 @@ public class HookAbility : MonoBehaviour
     {
        if (player.controls != null)
         {
-           player.controls.PlayerMovement.WestButton.performed -= ctx => StartThrowHook();   
-           player.controls.PlayerMovement.WestButton.canceled -= ctx => StopThrowHook();
+           player.controls.PlayerMovement.Ability4.performed -= ctx => StartThrowHook();   
+           player.controls.PlayerMovement.Ability4.canceled -= ctx => StopThrowHook();
         }
     }
 

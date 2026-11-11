@@ -52,3 +52,12 @@ public sealed class SecondExample : Tool
     }
 }
 */
+
+/*
+Now that I have the tool class and the first external class (Hook), I need to make something call the function in Hook.
+I am thinking, for the sake of not making a massive change in one day I should:
+a) tell bird.cs that the ability4 button is the hook button manually, no remapping yet.
+b) I need a way for the aiming to be done for the hook ability, I don't think I can make a player inputs object in the Hook class like I did with the HookAbility page, so I think I must input it somehow.
+c) the aiming vector must be constantly changing for the hook to aim properly, so I need it to constantly be calling the on start hook function I think.
+d) I need to give Hook.cs the prefab and functionality of HookAbility.cs, but I want to keep out all of the item count data for now, because that will be in the InventoryMain class, and I don't want to make a massive change in one day. I will do that later.
+*/

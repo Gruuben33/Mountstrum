@@ -6,12 +6,17 @@ public class Hook : Tool
     public override string Name => "Hook";
     public override int ID => 0;
     public override string Description => "A throwable hook and rope.";
-    public override void OnUseStart()
+    private Vector3 spawnPosition;
+    private float spawnOffset = 0.5f;
+    public override void OnUseStart(Bird user)
+
     {
-        // Implement hook start functionality here
+        // user.canMove = false;
+        Debug.Log("Aiming...");
     }
-    public override void OnUseEnd()
+    public override void OnUseEnd(Bird user, Vector2 aimDirection, float elapsedTime)
     {
-        // Implement hook end functionality here
+        // spawnPosition = user.transform.position + (Vector3)aimDirection.normalized * spawnOffset;
+        Debug.Log("Hook Thrown!");
     }
 }
